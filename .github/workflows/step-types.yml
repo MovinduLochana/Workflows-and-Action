@@ -13,13 +13,13 @@ jobs:
   say-hello-python:
     runs-on: ubuntu-24.04
     steps:
-      - run: print("Hello Worls")
+      - run: print("Hello World")
         shell: python
     
   # External Action
   say-hello-action:
     runs-on: ubuntu-24.04
     steps:
-      - uses: git@github.com:MovinduLochana/Workflows-and-Action.git
+      - uses: actions/hello-world-javascript-action@081a6d193d1dcb38460df1e6927486d748730f9d
         with:
           who-to-greet: "World"
