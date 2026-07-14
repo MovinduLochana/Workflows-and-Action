@@ -20,6 +20,6 @@ jobs:
   say-hello-action:
     runs-on: ubuntu-24.04
     steps:
-      - uses: action/hello-js-action
+      - uses: git@github.com:MovinduLochana/Workflows-and-Action.git
         with:
           who-to-greet: "World"
