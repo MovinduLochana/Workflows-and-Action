@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
     
 # Jobs runs in parralel
+# bash, python, and external action are different types of steps
+# needs is used to make sure that the specified step runs before the python step
 jobs:
   say-hello-bash:
     runs-on: ubuntu-24.04
@@ -12,6 +14,8 @@ jobs:
 
   say-hello-python:
     runs-on: ubuntu-24.04
+    needs:
+      - say-hello-bash
     steps:
       - run: print("Hello World")
         shell: python

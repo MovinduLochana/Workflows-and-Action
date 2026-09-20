@@ -1,0 +1,27 @@
+
+# almost any github event can trigger a workflow
+# - Trigger Manually
+# - Push to branch
+# - Create/update Pull Request
+# - Cron schedule
+
+name: Trigger Test
+on:
+  push:
+    branches:
+      - trigger/*
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    paths:
+      - "core/path/*.md" # include
+      - "!core/path/*.txt" # exclude
+
+jobs:
+  echo-event:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "Hello World"
+
